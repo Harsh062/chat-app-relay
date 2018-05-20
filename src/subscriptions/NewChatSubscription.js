@@ -25,9 +25,9 @@ import {
       variables: {},
       updater: proxyStore => {
         console.log('Updater called');
-        const createChatField = proxyStore.getRootField('Chat');
-        const chatLists = createChatField.getLinkedRecords('ChatConnection');
-       console.log(`chatLists: ${chatLists}`);
+        const createChatField = proxyStore.getRoot();
+        const  chats = createChatField.getLinkedRecords('allChats');
+       console.log(`chats: ${chats}`);
       },
       onError: error => console.log(`An error occured:`, error)
     }
