@@ -28,7 +28,7 @@ const fetchQuery = (operation, variables) => {
 const setupSubscription = (config, variables, cacheConfig, observer) => {
   const query = config.text
 
-  const subscriptionClient = new SubscriptionClient('wss://subscriptions.graph.cool/v1/cjhcsejyr7dwt0109y8gdtrwj', {reconnect: true})
+  const subscriptionClient = new SubscriptionClient('wss://subscriptions.graph.cool/v1/cjhcsejyr7dwt0109y8gdtrwj', {reconnect: true, timeout: 30000})
   subscriptionClient.subscribe({query, variables}, (error, result) => {
     observer.onNext({data: result})
   })

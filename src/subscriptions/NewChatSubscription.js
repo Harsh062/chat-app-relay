@@ -24,15 +24,10 @@ import {
       subscription: newChatSubscription,
       variables: {},
       updater: proxyStore => {
-        // const createChatField = proxyStore.getRootField('Chat');
-        // const newChat = createChatField.getLinkedRecord('node');
-        // const from = newChat.getLinkedRecord('from');
-        // const chatId = newChat.getValue('id');
-        // const createdAt = newChat.getLinkedRecord('createdAt');
-        // const content = newChat.getValue('content');
-  
-        // const chat = proxyStore.get(chatId)
-        // chat.getLinkedRecord('votes').setValue(newVoteCount, 'count')
+        console.log('Updater called');
+        const createChatField = proxyStore.getRootField('Chat');
+        const chatLists = createChatField.getLinkedRecords('ChatConnection');
+       console.log(`chatLists: ${chatLists}`);
       },
       onError: error => console.log(`An error occured:`, error)
     }

@@ -6,12 +6,6 @@ import './App.css';
 
 class App extends Component {
   
-  componentDidMount() {
-    // const from = window.prompt('Enter Username');
-    // from && this.setState({ from });
-    // this.subscribeToNewChats();
-  }
-  
   render() {
     return (
       <div className="">
